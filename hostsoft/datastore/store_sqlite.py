@@ -39,7 +39,7 @@ def read(key):
     cur.execute("select data from datastore where key = ?", (hash(key),))
     result = cur.fetchall()
     conn.commit()
-    return result
+    return result and result[0] or None
 
 def out(key):
     conn = get_connection()
@@ -48,7 +48,7 @@ def out(key):
     result = cur.fetchall()
     cur.execute("delete from datastore where key = ?", (hash(key),))
     conn.commit()
-    return result
+    return result and result[0] or None
 
 
 def main():
@@ -59,4 +59,5 @@ def main():
     print read("test")
 
 if __name__ == '__main__': main()
-
+else:
+    init_table()
