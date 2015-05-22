@@ -1,6 +1,5 @@
 import hostsoft.datastore.store_sqlite as store
 from flask import Flask, request
-# import logging
 
 app = Flask(__name__)
 
@@ -29,6 +28,5 @@ def get_data(key):
            (request.data, )
 
 if __name__ == "__main__":
-    # app.logger.setLevel(logging.INFO)
-    app.debug = True
+    # app.debug = True
     app.run()
