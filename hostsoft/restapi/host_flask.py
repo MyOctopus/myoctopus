@@ -1,5 +1,7 @@
 import hostsoft.datastore.store_sqlite as store
+import hostsoft.evaluator.python_evaluator as evaluator
 from flask import Flask, request
+
 
 app = Flask(__name__)
 
@@ -21,7 +23,7 @@ def get_data(key):
     evl = 'eval' in request.args
     if evl:
         lang = request.args.get('lang', "python")
-        #TODO: Implement this
+        store.evaluate(key, request.data)
         return "About to evaluate\nlang: %s\n%s" % (lang, request.data)
     store.put(key, request.data)
     return "Uploading the body\n%s" % \
@@ -29,4 +31,5 @@ def get_data(key):
 
 if __name__ == "__main__":
     # app.debug = True
+    evaluator.run()
     app.run()
