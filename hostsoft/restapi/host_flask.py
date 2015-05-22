@@ -5,9 +5,11 @@ from flask import Flask, request
 
 app = Flask(__name__)
 
+
 @app.route("/")
 def index():
     return "Will add short instruction here"
+
 
 @app.route("/data/<key>", methods=['GET', 'PUT'])
 def get_data(key):
