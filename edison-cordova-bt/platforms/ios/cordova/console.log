@@ -1,0 +1,69 @@
+2015-05-24 20:50:01.062 Edison-Bluetooth[23225:2679374] DiskCookieStorage changing policy from 2 to 0, cookie file: file:///Users/mihaipaun/Library/Developer/CoreSimulator/Devices/74113AC8-DC33-4E72-851A-922473F870FD/data/Containers/Data/Application/4756FA30-245B-40B3-A989-E6D25FEE4604/Library/Cookies/Cookies.binarycookies
+2015-05-24 20:50:01.164 Edison-Bluetooth[23225:2679374] Apache Cordova native platform version 3.8.0 is starting.
+2015-05-24 20:50:01.164 Edison-Bluetooth[23225:2679374] Multi-tasking -> Device: YES, App: YES
+2015-05-24 20:50:01.166 Edison-Bluetooth[23225:2679374] Unlimited access to network resources
+2015-05-24 20:50:01.169 Edison-Bluetooth[23225:2679374] 
+
+Started backup to iCloud! Please be careful.
+Your application might be rejected by Apple if you store too much data.
+For more information please read "iOS Data Storage Guidelines" at:
+https://developer.apple.com/icloud/documentation/data-storage/
+To disable web storage backup to iCloud, set the BackupWebStorage preference to "local" in the Cordova config.xml file
+
+2015-05-24 20:50:01.264 Edison-Bluetooth[23225:2679374] Bluetooth Serial Cordova Plugin - BLE version
+2015-05-24 20:50:01.264 Edison-Bluetooth[23225:2679374] (c)2013-2014 Don Coleman
+2015-05-24 20:50:01.267 Edison-Bluetooth[23225:2679374] [CDVTimer][bluetoothserial] 2.683043ms
+2015-05-24 20:50:01.267 Edison-Bluetooth[23225:2679374] [CDVTimer][TotalPluginStartup] 2.894998ms
+2015-05-24 20:50:01.350 Edison-Bluetooth[23225:2679374] Status of CoreBluetooth central manager changed 2 (State BLE unsupported (CBCentralManagerStateResetting))
+2015-05-24 20:50:01.589 Edison-Bluetooth[23225:2679374] Resetting plugins due to page load.
+2015-05-24 20:50:01.646 Edison-Bluetooth[23225:2679374] Finished load of: file:///Users/mihaipaun/Library/Developer/CoreSimulator/Devices/74113AC8-DC33-4E72-851A-922473F870FD/data/Containers/Bundle/Application/AC8C87F4-CE42-4D56-8525-66F112619F61/Edison-Bluetooth.app/www/index.html
+2015-05-24 20:50:07.362 Edison-Bluetooth[23225:2679374] connect
+2015-05-24 20:50:07.362 Edison-Bluetooth[23225:2679374] Scanning for BLE Peripherals
+2015-05-24 20:50:07.362 Edison-Bluetooth[23225:2679374] CoreBluetooth not correctly initialized !
+2015-05-24 20:50:07.362 Edison-Bluetooth[23225:2679374] State = 2 (State BLE unsupported (CBCentralManagerStateResetting))
+2015-05-24 20:50:10.364 Edison-Bluetooth[23225:2679374] Could not find peripheral 78:4b:87:9f:6f:32.
+2015-05-24 20:51:47.199 Edison-Bluetooth[23225:2679374] connect
+2015-05-24 20:51:47.199 Edison-Bluetooth[23225:2679374] Scanning for BLE Peripherals
+2015-05-24 20:51:47.199 Edison-Bluetooth[23225:2679374] CoreBluetooth not correctly initialized !
+2015-05-24 20:51:47.200 Edison-Bluetooth[23225:2679374] State = 2 (State BLE unsupported (CBCentralManagerStateResetting))
+2015-05-24 20:51:50.201 Edison-Bluetooth[23225:2679374] Could not find peripheral 78:4b:87:9f:6f:32.
+2015-05-24 20:52:10.539 Edison-Bluetooth[23225:2679374] connect
+2015-05-24 20:52:10.539 Edison-Bluetooth[23225:2679374] Scanning for BLE Peripherals
+2015-05-24 20:52:10.539 Edison-Bluetooth[23225:2679374] CoreBluetooth not correctly initialized !
+2015-05-24 20:52:10.540 Edison-Bluetooth[23225:2679374] State = 2 (State BLE unsupported (CBCentralManagerStateResetting))
+2015-05-24 20:52:13.540 Edison-Bluetooth[23225:2679374] Could not find peripheral 78:4b:87:9f:6f:32.
+2015-05-24 20:53:21.400 Edison-Bluetooth[23360:2682997] DiskCookieStorage changing policy from 2 to 0, cookie file: file:///Users/mihaipaun/Library/Developer/CoreSimulator/Devices/74113AC8-DC33-4E72-851A-922473F870FD/data/Containers/Data/Application/611AB022-5791-470C-9B9E-6ABDFC9057E0/Library/Cookies/Cookies.binarycookies
+2015-05-24 20:53:21.465 Edison-Bluetooth[23360:2682997] Apache Cordova native platform version 3.8.0 is starting.
+2015-05-24 20:53:21.466 Edison-Bluetooth[23360:2682997] Multi-tasking -> Device: YES, App: YES
+2015-05-24 20:53:21.467 Edison-Bluetooth[23360:2682997] Unlimited access to network resources
+2015-05-24 20:53:21.470 Edison-Bluetooth[23360:2682997] 
+
+Started backup to iCloud! Please be careful.
+Your application might be rejected by Apple if you store too much data.
+For more information please read "iOS Data Storage Guidelines" at:
+https://developer.apple.com/icloud/documentation/data-storage/
+To disable web storage backup to iCloud, set the BackupWebStorage preference to "local" in the Cordova config.xml file
+
+2015-05-24 20:53:21.555 Edison-Bluetooth[23360:2682997] Bluetooth Serial Cordova Plugin - BLE version
+2015-05-24 20:53:21.555 Edison-Bluetooth[23360:2682997] (c)2013-2014 Don Coleman
+2015-05-24 20:53:21.557 Edison-Bluetooth[23360:2682997] [CDVTimer][bluetoothserial] 1.874983ms
+2015-05-24 20:53:21.557 Edison-Bluetooth[23360:2682997] [CDVTimer][TotalPluginStartup] 2.044976ms
+2015-05-24 20:53:21.569 Edison-Bluetooth[23360:2682997] Status of CoreBluetooth central manager changed 2 (State BLE unsupported (CBCentralManagerStateResetting))
+2015-05-24 20:53:21.640 Edison-Bluetooth[23360:2682997] Resetting plugins due to page load.
+2015-05-24 20:53:21.687 Edison-Bluetooth[23360:2682997] Finished load of: file:///Users/mihaipaun/Library/Developer/CoreSimulator/Devices/74113AC8-DC33-4E72-851A-922473F870FD/data/Containers/Bundle/Application/6D61D3C8-AED2-4BF3-AEA4-2D2569C2D1C1/Edison-Bluetooth.app/www/index.html
+2015-05-24 20:53:26.282 Edison-Bluetooth[23360:2682997] connect
+2015-05-24 20:53:26.283 Edison-Bluetooth[23360:2682997] Scanning for BLE Peripherals
+2015-05-24 20:53:26.283 Edison-Bluetooth[23360:2682997] CoreBluetooth not correctly initialized !
+2015-05-24 20:53:26.283 Edison-Bluetooth[23360:2682997] State = 2 (State BLE unsupported (CBCentralManagerStateResetting))
+2015-05-24 20:53:29.284 Edison-Bluetooth[23360:2682997] Could not find peripheral 98:4F:EE:04:00:50.
+2015-05-24 20:53:32.257 Edison-Bluetooth[23360:2682997] connect
+2015-05-24 20:53:32.257 Edison-Bluetooth[23360:2682997] Scanning for BLE Peripherals
+2015-05-24 20:53:32.257 Edison-Bluetooth[23360:2682997] CoreBluetooth not correctly initialized !
+2015-05-24 20:53:32.257 Edison-Bluetooth[23360:2682997] State = 2 (State BLE unsupported (CBCentralManagerStateResetting))
+2015-05-24 20:53:35.258 Edison-Bluetooth[23360:2682997] Could not find peripheral 98:4F:EE:04:00:50.
+2015-05-24 20:55:00.050 Edison-Bluetooth[23360:2682997] connect
+2015-05-24 20:55:00.050 Edison-Bluetooth[23360:2682997] Scanning for BLE Peripherals
+2015-05-24 20:55:00.050 Edison-Bluetooth[23360:2682997] CoreBluetooth not correctly initialized !
+2015-05-24 20:55:00.051 Edison-Bluetooth[23360:2682997] State = 2 (State BLE unsupported (CBCentralManagerStateResetting))
+2015-05-24 20:55:03.052 Edison-Bluetooth[23360:2682997] Could not find peripheral 98:4F:EE:04:00:50.
+2015-05-24 21:12:36.627 Edison-Bluetooth[23360:2698958] Terminating since there is no system app.
