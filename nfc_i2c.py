@@ -1,3 +1,5 @@
+  #register map: https://www.dropbox.com/s/lozkd276k9xmr4o/rf430cl330h.pdf?dl=0
+  #examples how to use dev board rf430cl330htb: http://www.ti.com/tool/rf430cl330htb
   import mraa
   i2C = mraa.I2c(1); #i2c bus choice
   i2C.address(0x28); #NFC address 0x28 on i2c
