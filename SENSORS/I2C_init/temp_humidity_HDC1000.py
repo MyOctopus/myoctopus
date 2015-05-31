@@ -23,12 +23,12 @@ temp = int(binascii.hexlify(d),16)/65536.0*165.0-40.0;
 print "TEMPERATURE(-40:+125): %iC" % temp;
 
 
-i2C.write(bytearray(b'\x01')); #mark humidity from register    
+i2C.write(bytearray(b'\x01')); #humidity adr from register    
 time.sleep(0.015);
 d = i2C.read(2);
 hum = int(binascii.hexlify(d),16)/65536.0*100.0;
 #print "HEX HUMIDITY: %s" % binascii.hexlify(d); #print raw hex
-print "HUMIDITY: %i %%rH" % hum;
+print "HUMIDITY(0-100%%): %i %%rH" % hum;
 
 
 
