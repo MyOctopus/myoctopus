@@ -190,3 +190,5 @@ _Pvt_Extensions/
 ModelManifest.xml
 
 *.pyc
+.idea
+*.db

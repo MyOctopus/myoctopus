@@ -31,7 +31,7 @@ def get_data(key):
     return "Uploading the body\n%s" % \
            (request.data, )
 
-if __name__ == "__main__":
-    # app.debug = True
+def run():
+    app.debug = True
     evaluator.run()
-    app.run()
+    app.run(host="0.0.0.0", port=6666)

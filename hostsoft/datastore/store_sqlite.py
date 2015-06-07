@@ -54,7 +54,7 @@ def out(key):
 def evaluate(key, code):
     conn = get_connection()
     cur = conn.cursor()
-    cur.execute("insert into evalstore (key, code) values ('%s', '%s')" %(hash(key), code))
+    cur.execute("insert into evalstore (key, code) values (?, ?)" , (hash(key), code))
     conn.commit()
 
 
