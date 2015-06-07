@@ -1,5 +1,4 @@
 import hostsoft.datastore.store_sqlite as store
-import hostsoft.evaluator.python_evaluator as evaluator
 from flask import Flask, request
 
 
@@ -33,5 +32,4 @@ def get_data(key):
 
 def run():
     app.debug = True
-    evaluator.run()
     app.run(host="0.0.0.0", port=6666)

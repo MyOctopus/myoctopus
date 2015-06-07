@@ -5,12 +5,11 @@
 
 
 import hostsoft.datastore.store_sqlite as store
-from threading import Thread
 from time import sleep
 import imp
 
 
-def pooler():
+def run():
     while True:
         es = store.get_evals()
         if es:
@@ -24,7 +23,3 @@ def pooler():
             print "No Jobs for evaluation"
         sleep(1)
 
-
-def run():
-    t = Thread(target=pooler)
-    t.start()
