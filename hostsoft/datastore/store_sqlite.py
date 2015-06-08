@@ -32,23 +32,14 @@ def put(key, value, hashed=False):
     conn.commit()
 
 
-def read(key):
+def read(key, remove=False):
     conn = get_connection()
     cur = conn.cursor()
     cur.execute("select data from datastore where key = ?", (hash(key),))
     result = cur.fetchall()
+    if remove: cur.execute("delete from datastore where key = ?", (hash(key),))
     conn.commit()
-    return result and result[0] or None
-
-
-def out(key):
-    conn = get_connection()
-    cur = conn.cursor()
-    cur.execute("select data from datastore where key = ?", (hash(key),))
-    result = cur.fetchall()
-    cur.execute("delete from datastore where key = ?", (hash(key),))
-    conn.commit()
-    return result and result[0] or None
+    return result and result[0][0] or None
 
 
 def evaluate(key, code):

@@ -15,7 +15,7 @@ def get_data(key):
     if request.method == "GET":
         remove = 'remove' in request.args
         if remove:
-            value = store.out(key)
+            value = store.read(key, remove=True)
         else:
             value = store.read(key)
         if not value:
