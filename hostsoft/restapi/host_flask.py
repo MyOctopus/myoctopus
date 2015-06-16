@@ -1,5 +1,4 @@
 import hostsoft.datastore.store_sqlite as store
-import hostsoft.evaluator.python_evaluator as evaluator
 from flask import Flask, request
 
 
@@ -16,7 +15,7 @@ def get_data(key):
     if request.method == "GET":
         remove = 'remove' in request.args
         if remove:
-            value = store.out(key)
+            value = store.read(key, remove=True)
         else:
             value = store.read(key)
         if not value:
@@ -31,7 +30,6 @@ def get_data(key):
     return "Uploading the body\n%s" % \
            (request.data, )
 
-if __name__ == "__main__":
-    # app.debug = True
-    evaluator.run()
-    app.run()
+def run():
+    app.debug = True
+    app.run(host="0.0.0.0", port=6666)
