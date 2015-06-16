@@ -1,0 +1,23 @@
+/* Empty. Add your own CSS if you like */
+#switch-simple-bulb-image{
+	max-width: 300px;
+	-webkit-transform: rotate(180deg);
+	transform: rotate(180deg)
+}
+
+#switch-simple-bulb-container{
+	-webkit-transition: all 0.5s linear 0s;
+	transition: all 0.5s linear 0s;
+}
+
+#switch-simple-bulb-container img{
+	margin-bottom: 100px;
+}
+ion-content{
+	background: rgba(100,100,100,0.7) url('../img/pw_bricks1.png');
+}
+.dark-item{
+	background: #666;
+	color: white;
+/* 	border: none !important; */
+}
