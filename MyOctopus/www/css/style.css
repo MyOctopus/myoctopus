@@ -19,5 +19,8 @@ ion-content{
 .dark-item{
 	background: #666;
 	color: white;
-/* 	border: none !important; */
+}
+.x.axis .tick text{
+	-webkit-transform: rotate(-30deg) translatex(-10px);
+	transform: rotate(-30deg) translatex(-10px)
 }

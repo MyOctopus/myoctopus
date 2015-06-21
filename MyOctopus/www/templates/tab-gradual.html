@@ -1,4 +1,14 @@
-<ion-view view-title="Gradual">
-  <ion-content class="padding">
-  </ion-content>
+<ion-view view-title="Gradual {{light.graduation}}%">
+  <ion-content has-bouncing="false">
+	 <div class="brick-wall" on-swipe-right="swipeChange(true)" on-swipe-left="swipeChange(false)">
+	  <div class="item item-image" id="switch-simple-bulb-container" ng-style="lightStyle()">
+	    <img id="switch-simple-bulb-image" src="img/bulb_PNG1243.png"/>
+	  </div>
+	</div>
+ 	<div class="item dark-item range">
+	  <i class="icon ion-ios-sunny-outline"></i>
+	  	<input type="range" name="volume" min="0" max="100" ng-model="light.graduation" >
+	  <i class="icon ion-ios-sunny"></i>
+	</div>
+ </ion-content>
 </ion-view>
