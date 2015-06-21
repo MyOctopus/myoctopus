@@ -8,12 +8,7 @@ class LocalNode(object):
     def put(self, key, value):
         store.put(key, value)
 
-def get_routing_table():
-    return {'key': '192.168.0.14'}
-
 def get_node_for_key(key):
     return LocalNode()
 
-def get_my_id():
-    return '192.168.0.14'
 
