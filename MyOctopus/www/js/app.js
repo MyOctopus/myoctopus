@@ -1,18 +1,18 @@
 
 angular
-		.module('starter', [ 'ionic', 'starter.controllers', 'starter.services' ])
+		.module('starter', [ 'ionic', 'n3-line-chart', 'starter.controllers', 'starter.services' ])
 
 		.run(
-				function($ionicPlatform, $rootScope, $ionicPopup) {
+				function($ionicPlatform, $rootScope, $ionicPopup, Help) {
 					$ionicPlatform
 							.ready(function() {
 								$rootScope.showPopup = function() {
 									var myPopup = $ionicPopup
 											.alert({
-												template : '<div class="sub-header"><i class="icon ion-ios-sunny"></i> Double tap to toggle.</div><div class="sub-header"><i class="icon ion-ios-sunny"></i> Swipe left/right to turn on or off respectively.</div><div class="sub-header"><i class="icon ion-ios-sunny"></i> Or use the toggle button.</div>',
+												template : Help.getActual(),
 												title : 'How to ...?',
 												okType: "button-energized",
-												okText : "Cerrar"
+												okText : "Close"
 											});
 								}
 								// Hide the accessory bar by default (remove
@@ -66,7 +66,7 @@ angular
 				}
 			})
 
-			.state('tab.gaph', {
+			.state('tab.graph', {
 				url : '/graph',
 				views : {
 					'tab-graph' : {
