@@ -98,4 +98,52 @@ angular.module('starter.controllers', [])
 	}
 	$scope.$on("$ionicView.enter", initialize);
 	$scope.$on("$ionicView.leave", leaving);
+})
+
+.controller('NetworkCtrl', function ($scope, Settings, $http, $ionicPopup) {
+    $scope.address = { url: '' }
+    $scope.error = { iserror: false, message: '' }
+    $scope.testing = false;
+    $scope.confirm = function () {
+        // test if connection works
+        $scope.testing = true;
+        var address = 'http://'+ $scope.address.url + '/test';
+        $http.get(address).success(function (data, status) {
+            $scope.error.iserror = false;
+            Settings.setNetwork($scope.address.url);
+            $scope.testing = false;
+            var alertPopup = $ionicPopup.alert({
+                title: 'Test successful',
+                template: 'Response: ' + data
+            });
+            alertPopup.then(function (res) {
+            });
+        }).error(function (data, status) {
+            $scope.error.iserror = true;
+            $scope.error.message = data;
+            $scope.testing = false;
+            var alertPopup = $ionicPopup.alert({
+                title: 'Error',
+                template: 'Response: ' + status
+            });
+            alertPopup.then(function (res) {
+            });
+        });
+    }
+    function initialize() {
+        var address = Settings.getNetwork();
+        if ('' == address)
+            address = '192.168.0.7:8080';
+        $scope.address.url = address;
+    }
+    function leaving() {
+        
+    }
+
+    //$scope.$watch("address.url", function (newValue, oldValue) {
+    //    $scope.address.url = newValue;
+    //});
+
+    $scope.$on("$ionicView.enter", initialize);
+    $scope.$on("$ionicView.leave", leaving);
 });

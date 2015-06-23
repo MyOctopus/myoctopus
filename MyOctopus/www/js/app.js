@@ -74,9 +74,19 @@ angular
 						controller : 'GraphCtrl'
 					}
 				}
-			});
+			})
+
+            .state('tab.network', {
+                url: '/network',
+                views: {
+                    'tab-network': {
+                        templateUrl: 'templates/tab-network.html',
+                        controller: 'NetworkCtrl'
+                    }
+                }
+            });
 
 			// if none of the above states are matched, use this as the fallback
-			$urlRouterProvider.otherwise('/tab/dash');
+			$urlRouterProvider.otherwise('/tab/network');
 
 		});

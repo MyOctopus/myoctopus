@@ -1,7 +1,18 @@
 angular
 		.module('starter.services', [])
 
-		.factory('Light', function($http) {
+        .factory('Settings', function($http) {
+            return {
+                setNetwork: function (address) {
+                    localStorage.setItem('network', address);
+                },
+                getNetwork: function () {
+                    return localStorage.getItem('network') || '';
+                }
+            }
+        })
+
+		.factory('Light', function($http, Settings) {
 			// Might use a resource here that returns a JSON array
 
 			// Some fake testing data
@@ -45,18 +56,20 @@ angular
 					this.post();
 					localStorage.setItem("graduation", actualGraduation)
 				},
-				post : function() {
-					$http.post('http://dadomagico.co.nf/postData.php', {
-						graduation : actualGraduation
-					}).success(function(data, status, headers, config) {
+				post: function () {
+				    var address = 'http://' + Settings.getNetwork() + '/data/light';
+				    $http.defaults.headers.put["Content-Type"] = "text/plain";
+					$http.put(address, actualGraduation)
+					.success(function(data, status, headers, config) {
 						console.log(data, status, headers, config);
 					}).error(function(data, status, headers, config) {
 						console.log(data, status, headers, config);
 					});
 				},
-				getActual : function() {
-					$http.get('http://dadomagico.co.nf/getActualData.php').success(function(data, status) {
-						actualGraduation = data.graduation;
+				getActual: function () {
+				    var address = 'http://' + Settings.getNetwork() + '/data/light';
+					$http.get(address).success(function(data, status) {
+						actualGraduation = data;
 						console.log(data);
 					}).error(function(data, status) {
 						console.log(data);
@@ -68,7 +81,7 @@ angular
 
 		.factory(
 				'Chart',
-				function($http, $q) {
+				function($http, $q, Settings) {
 					var graph = {
 						scaled : true,
 						options : {
@@ -151,8 +164,8 @@ angular
 							var defer = $q.defer();
 							graph.options.axes.y.min = 0;
 							graph.options.axes.y.max = 100;
-						    //$http.get('http://dadomagico.co.nf/getData.php').success(function(data, status) {
-						    $http.get('http://192.168.0.7:8080/data/sensors').success(function (data, status) {
+							var address = 'http://' + Settings.getNetwork() + '/data/sensors';
+						    $http.get(address).success(function (data, status) {
 								processSeries(data.sensors);
 								processData(data.data, new Date(data.timestamp));
 								defer.resolve(graph);
@@ -169,7 +182,7 @@ angular
 								for (var i = 0; i < data.length; i++) {
 									newData["sensor_" + data[i].sensor_id] = parseFloat(data[i].value);
 								}
-								if (graph.data.length > 40)
+								if (graph.data.length > 20)
 									graph.data.shift();
 								graph.data.push(newData)
 							}
@@ -195,7 +208,8 @@ angular
 							var defer = $q.defer();
 							delete graph.options.axes.y.min;
 							delete graph.options.axes.y.max;
-							$http.get('http://dadomagico.co.nf/getData.php').success(function(data, status) {
+							var address = 'http://' + Settings.getNetwork() + '/data/sensors';
+							$http.get(address).success(function (data, status) {
 								processSeries(data.sensors);
 								var time = new Date(data.timestamp);
 								processData(data.data, new Date(data.timestamp));
@@ -214,7 +228,8 @@ angular
 					var helps = {
 						'tab.dash' : '<div class="sub-header"><i class="icon ion-ios-sunny"></i> Double tap to toggle.</div><div class="sub-header"><i class="icon ion-ios-sunny"></i> Swipe left/right to turn on or off respectively.</div><div class="sub-header"><i class="icon ion-ios-sunny"></i> Or use the toggle button.</div>',
 						'tab.graph' : '<div class="sub-header"><i class="icon ion-ios-sunny"></i> Tap a sensor to display/hide it.</div><div class="sub-header"><i class="icon ion-ios-sunny"></i> Use the buttons on the bottom to change the graph.</div><div class="sub-header"><i class="icon ion-ios-sunny"></i> Use the toggle input to switch between scaled or not scaled data.</div><div class="sub-header"><i class="icon ion-ios-sunny"></i> If the scale is ON, hiding/displaying different sensors will make the scale change.</div>',
-						'tab.gradual' : '<div class="sub-header"><i class="icon ion-ios-sunny"></i> Use the range input to graduate your light.</div><div class="sub-header"><i class="icon ion-ios-sunny"></i> Swipe left/right to add or substract 10% respectively.</div>'
+						'tab.gradual': '<div class="sub-header"><i class="icon ion-ios-sunny"></i> Use the range input to graduate your light.</div><div class="sub-header"><i class="icon ion-ios-sunny"></i> Swipe left/right to add or substract 10% respectively.</div>',
+                        'tab.network' : '<div class="sub-header"><i class="icon ion-ios-sunny"></i> Configure IP address for Edison.</div>'
 					}
 					return {
 						getActual : function() {
