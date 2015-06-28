@@ -16,8 +16,6 @@ tar -czvf $dest_file --transform "$folder_regex" $source_dir
 
 md5s=$(md5sum  $dest_file | awk '{ print $1 }')
 sha256s=$(sha256sum  $dest_file | awk '{ print $1 }')
-#echo $md5s
-#echo $sha256s
 
 recipe_file=$top_dir/meta-myoctopus/recipes-myoctopus/myoctopus/myoctopus_$1.bb
 
