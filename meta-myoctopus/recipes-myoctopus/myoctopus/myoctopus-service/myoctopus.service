@@ -2,8 +2,10 @@
 Description=MyOctopus hostsoft service
 
 [Service]
-ExecStart=/usr/bin/python /usr/bin/run.py
+ExecStart=/usr/bin/python /usr/share/myoctopus/run.py
+WorkingDirectory=/usr/share/myoctopus
 Restart=on-failure
+User=myoctopus
 
 [Install]
 WantedBy=default.target

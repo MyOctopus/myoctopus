@@ -7,7 +7,7 @@ setup(
     license='BSD',
     author='wawrzyniec Wawro',
     author_email='wawrzyniec@wawro.eu',
-    description='Host software for myOctopus project',
+    description='Host software for MyOctopus project',
     packages=find_packages(),
     platforms='any',
     install_requires=[

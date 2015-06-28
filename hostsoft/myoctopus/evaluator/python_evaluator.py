@@ -4,7 +4,7 @@
 #TODO: would be happening though api anyway - this should not be a problem.
 
 
-import hostsoft.datastore.store_sqlite as store
+import myoctopus.datastore.store_sqlite as store
 from time import sleep
 import imp
 

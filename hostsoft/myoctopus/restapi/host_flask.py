@@ -1,4 +1,4 @@
-import hostsoft.datastore.store_sqlite as store
+import myoctopus.datastore.store_sqlite as store
 from flask import Flask, request
 
 
