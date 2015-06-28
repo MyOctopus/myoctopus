@@ -8,14 +8,12 @@ import inspect
 import pkgutil
 import sys
 import os
-#src = inspect.getsource(module)
 
 #TODO: To be extracted to separate process
 
 evalThread = threading.Thread(target=lambda: evaluator.run())
 evalThread.daemon = True
 evalThread.start()
-
 
 sensors_path = os.path.dirname(sys.modules['myoctopus.sensors'].__file__)
 
