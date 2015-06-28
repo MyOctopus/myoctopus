@@ -7,19 +7,27 @@
 import myoctopus.datastore.store_sqlite as store
 from time import sleep
 import imp
+import threading
+
+threads = []
+
+def runner(key, code):
+    module = imp.new_module("eval_module")
+    exec code in module.__dict__
+    result = module.main()
+    store.put(key, result, hashed=True)
 
 
 def run():
     while True:
         es = store.get_evals()
         if es:
-            module = imp.new_module("eval_module")
             key, code = es
-            print code
-            exec code in module.__dict__
-            result = module.main()
-            store.put(key, result, hashed=True)
+            evalThread = threading.Thread(target=runner, args=(key, code,))
+            evalThread.daemon = True
+            evalThread.start()
+            threads.append(evalThread)
         else:
-            print "No Jobs for evaluation"
+            pass
+            #print "No Jobs for evaluation"
         sleep(1)
-

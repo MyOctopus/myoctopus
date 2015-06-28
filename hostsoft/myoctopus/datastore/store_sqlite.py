@@ -12,11 +12,11 @@ def init_table():
     cur = conn.cursor()
     cur.execute("SELECT name FROM sqlite_master WHERE type='table' AND name='datastore'")
     if not cur.fetchall():
-        cur.execute("create table datastore (key VARCHAR(256), data text)")
+        cur.execute("create table datastore (key VARCHAR(256), data text, timestamp DATETIME DEFAULT CURRENT_TIMESTAMP)")
     conn.commit()
     cur.execute("SELECT name FROM sqlite_master WHERE type='table' AND name='evalstore'")
     if not cur.fetchall():
-        cur.execute("create table evalstore (key VARCHAR(256), code text)")
+        cur.execute("create table evalstore (key VARCHAR(256), code text, timestamp DATETIME DEFAULT CURRENT_TIMESTAMP)")
     conn.commit()
 
 
@@ -35,9 +35,9 @@ def put(key, value, hashed=False):
 def read(key, remove=False):
     conn = get_connection()
     cur = conn.cursor()
-    cur.execute("select data from datastore where key = ?", (hash(key),))
+    cur.execute("select data from datastore where key = ? order by timestamp desc limit 1", (hash(key),))
     result = cur.fetchall()
-    if remove: cur.execute("delete from datastore where key = ?", (hash(key),))
+    if remove: cur.execute("delete from datastore where key = ? and timestamp = ?", (hash(key),result[0][2],))
     conn.commit()
     return result and result[0][0] or None
 
@@ -52,13 +52,13 @@ def evaluate(key, code):
 def get_evals():
     conn = get_connection()
     cur = conn.cursor()
-    cur.execute("select key, code from evalstore LIMIT 1")
+    cur.execute("select key, code, timestamp from evalstore order by timestamp desc limit 1")
     result = cur.fetchall()
     if not result:
         return None
-    cur.execute("delete from evalstore where key = ?", (result[0][0],))
+    cur.execute("delete from evalstore where key = ? and timestamp = ?", (result[0][0],result[0][2],))
     conn.commit()
-    return result[0]
+    return result[0][0:2]
 
 
 def main():

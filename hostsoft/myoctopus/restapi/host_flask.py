@@ -32,4 +32,4 @@ def get_data(key):
 
 def run():
     app.debug = True
-    app.run(host="0.0.0.0", port=6666)
+    app.run(host="0.0.0.0", port=8880)

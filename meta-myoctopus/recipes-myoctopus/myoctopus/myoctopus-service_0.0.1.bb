@@ -2,9 +2,6 @@ SUMMARY = "My Octopus host software daemon"
 LICENSE = "BSD"
 LIC_FILES_CHKSUM = "file://LICENSE;md5=b3cb8d8f023026f3a1204ea334572c80"
 
-
-
-
 SYSTEMD_SERVICE_${PN} = "myoctopus.service"
 
 SRC_URI = "file://myoctopus.service"
@@ -22,8 +19,6 @@ USERADD_PARAM_${PN} = "-u 1200 -g myoctopus -d ${D}${datadir}/myoctopus -r -s /b
 GROUPADD_PARAM_${PN} = "-g 900 myoctopus"
 
 do_install() {
-#        install -d ${D}${bindir}
-#        install -m 0755 run.py ${D}${bindir}
         install -d -m 755 ${D}${datadir}/myoctopus
 
         # Copy service file
@@ -38,7 +33,6 @@ do_install() {
 }
 
 FILES_${PN} = "${base_libdir}/systemd/system/myoctopus.service"
-#FILES_${PN} += "${bindir}/run.py"
 FILES_${PN} += "${datadir}/myoctopus/*"
 
 INHIBIT_PACKAGE_DEBUG_SPLIT = "1"
