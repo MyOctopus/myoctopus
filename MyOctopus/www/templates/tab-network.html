@@ -6,15 +6,18 @@
         <input type="text" ng-model="address.url">
       </label>
       </div>
-    <button class="button button-block button-positive" ng-click="confirm()">
-        OK
+    <button class="button button-block button-positive" ng-click="scan()" ng-disabled="scan.running">
+        Scan for Octopus devices
     </button>
       <div class="row row-center">
           <div class="col col-center">
-            <ion-spinner icon="android" ng-show="testing" class="ng-hide"></ion-spinner>
+            <ion-spinner icon="android" ng-show="spinner.run" class="ng-hide"></ion-spinner>
           </div>
           <div class="col col-center" class="ng-hide" ng-show="error.iserror">
               <div ng-model="error.message"></div>
+          </div>
+          <div class="col col-center">
+              <div ng-model="log.message"></div>
           </div>
       </div>
          

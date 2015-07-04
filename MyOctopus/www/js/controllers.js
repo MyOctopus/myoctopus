@@ -100,18 +100,140 @@ angular.module('starter.controllers', [])
 	$scope.$on("$ionicView.leave", leaving);
 })
 
-.controller('NetworkCtrl', function ($scope, Settings, $http, $ionicPopup) {
+.controller('NetworkCtrl', function ($scope, Settings, $http, $ionicPopup, lodash) {
     $scope.address = { url: '' }
     $scope.error = { iserror: false, message: '' }
-    $scope.testing = false;
+    $scope.spinner = { run: false };
+    $scope.bluetoothEnabled = false;
+    $scope.log = { message: '' }
+    $scope.scan = { running: false }
+    $scope.device = null;
+
+    var octopusSvcId = '336c7591-0879-42ba-af69-b13e491e0b3a',
+        setupCharacteristicsId = 'e4d81ca0-90be-45f6-b6a8-a1335c6ffe9d',
+        onCompleteCharacteristicsId = '5793bd42-6404-4c79-b299-122bbf7d0df1';
+
+    var stringToBytes = function (string) {
+        var array = new Uint8Array(string.length);
+        for (var i = 0, l = string.length; i < l; i++) {
+            array[i] = string.charCodeAt(i);
+        }
+        return array.buffer;
+    }
+
+    var bytesToString = function (buffer) {
+        return String.fromCharCode.apply(null, new Uint8Array(buffer));
+    }
+    $scope.scan = function () {
+        $scope.scan.running = true;
+        ble.startScan([octopusSvcId],
+            function (device) {
+                if ($scope.scan.running) {
+                    // Try to connecte the device and check the service and characteristics
+                    ble.connect(
+                        device.id,
+                        function (po) {
+                            // Check that the device is Octopus
+                            //if (!_.some(po.services, function (svcid) { return svcid.toLower() === octopusSvcId; }) ||
+                            //    (!_.some(po.characteristics, function (c) { return c.characteristic.toLower() === setupCharacteristicsId; })) &&
+                            //    (!_.some(po.characteristics, function (c) { return c.characteristic.toLower() === onCompleteCharacteristicsId; }))) {
+                            //    ble.disconnect(device.id);
+                            //} else
+                            {
+                                // Octopus found, subscribe to listener and initiate setup
+                                ble.startNotification(device.id, octopusSvcId, onCompleteCharacteristicsId,
+                                    function (data) {
+                                        data = bytesToString(data);
+                                        ble.stopNotification(device.id, octopusSvcId, onCompleteCharacteristicsId);
+                                        ble.disconnect(device.id);
+                                    },
+                                    function () {
+                                        ble.disconnect(device.id);
+                                    });
+
+                                var setupData = angular.toJson({
+                                    key: '8cc5f0aa11ca47a9bb10d252b5f58b60',
+                                    id: 'Octopus Setup Data',
+                                    ssid: 'test',
+                                    pwd: 'testpwd',
+                                    name: 'Octopus_abc_001'
+                                });
+                                data = stringToBytes(setupData);
+                                ble.writeWithoutResponse(device.id, octopusSvcId, setupCharacteristicsId, data,
+                                    function () {
+                                        $scope.scan.running = false;
+                                        window.plugins.spinnerDialog.hide();
+                                        var alertPopup = $ionicPopup.alert({
+                                            title: 'Success',
+                                            template: 'Setup for ' + device.name + 'initiated successfully'
+                                        });
+                                        alertPopup.then(function (res) {
+                                        });
+                                    },
+                                    function () {
+                                        ble.disconnect(device.id);
+                                        $scope.scan.running = false;
+                                        window.plugins.spinnerDialog.hide();
+                                        var alertPopup = $ionicPopup.alert({
+                                            title: 'Error',
+                                            template: 'Failed to write setup data to ' + device.name
+                                        });
+                                        alertPopup.then(function (res) {
+                                        });
+                                    });
+                            }
+                        },
+                        function () {
+                        });
+                }
+            },
+            function (err) {
+                if ($scope.scan.running) {
+                    $scope.scan.running = false;
+                    window.plugins.spinnerDialog.hide();
+                    error.iserror = true;
+                    error.message = err;
+                }
+            });
+
+        // spinner with message, and a log message when it's dismissed
+        window.plugins.spinnerDialog.show(
+            'Octopus Setup', // title
+            "Scanning for Octopus devices, please wait...", // message
+            function () {
+                // dismissed
+                $scope.scan.running = false;
+                ble.stopScan();
+            }
+       );
+
+       setTimeout(ble.stopScan,
+         5000,
+         function () {
+             if ($scope.scan.running) {
+                 $scope.scan.running = false;
+                 window.plugins.spinnerDialog.hide();
+             }
+         },
+         function (err) {
+             if ($scope.scan.running) {
+                 $scope.scan.running = false;
+                 window.plugins.spinnerDialog.hide();
+                 error.iserror = true;
+                 error.message = err;
+             }
+         }
+      );
+    }
+
     $scope.confirm = function () {
         // test if connection works
-        $scope.testing = true;
+        $scope.spinner.run = true;
         var address = 'http://'+ $scope.address.url + '/test';
         $http.get(address).success(function (data, status) {
             $scope.error.iserror = false;
             Settings.setNetwork($scope.address.url);
-            $scope.testing = false;
+            $scope.spinner.run = false;
             var alertPopup = $ionicPopup.alert({
                 title: 'Test successful',
                 template: 'Response: ' + data
@@ -121,7 +243,7 @@ angular.module('starter.controllers', [])
         }).error(function (data, status) {
             $scope.error.iserror = true;
             $scope.error.message = data;
-            $scope.testing = false;
+            $scope.spinner.run = false;
             var alertPopup = $ionicPopup.alert({
                 title: 'Error',
                 template: 'Response: ' + status
@@ -130,14 +252,35 @@ angular.module('starter.controllers', [])
             });
         });
     }
+
     function initialize() {
         var address = Settings.getNetwork();
         if ('' == address)
             address = '192.168.0.7:8080';
         $scope.address.url = address;
+
+        ble.isEnabled(
+            function () {
+                console.log("Settings::Initialize::Bluetooth::isEnabled: true");
+            },
+            function () {
+                console.log("Settings::Initialize::Bluetooth::isEnabled: false");
+                ble.enable();
+                $scope.bluetoothEnabled = true;
+            });
     }
+
     function leaving() {
-        
+        // Turn off bluetooth
+        cordova.plugins.locationManager.isBluetoothEnabled()
+            .then(function (isEnabled) {
+                console.log("Settings::Leaving::Bluetooth::isEnabled: " + isEnabled);
+                if (isEnabled) {
+                    cordova.plugins.locationManager.disableBluetooth();
+                }
+            })
+            .fail(console.error)
+            .done();
     }
 
     //$scope.$watch("address.url", function (newValue, oldValue) {

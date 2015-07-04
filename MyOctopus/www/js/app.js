@@ -1,6 +1,6 @@
 
 angular
-		.module('starter', [ 'ionic', 'n3-line-chart', 'starter.controllers', 'starter.services' ])
+		.module('starter', [ 'ionic', 'n3-line-chart', 'starter.controllers', 'starter.services', 'ngLodash' ])
 
 		.run(
 				function($ionicPlatform, $rootScope, $ionicPopup, Help) {
