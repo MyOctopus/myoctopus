@@ -52,8 +52,8 @@ all your other smart devices into a grid, and it will be both an app-hosting and
  and level shifter boards will be available, along with Intel Edison [breakout](http://ark.intel.com/products/84573/Intel-Edison-Breakout-Board-Kit)
  board kits.   Basically, the [sensors](https://github.com/wawrow/myoctopus/wiki/Developer-----Technical-Notes#with-each-myoctopus-device-the-following-components-will-be-available) 
  and level shifters together are 'plug and play' in relation to the I2C BUS.  These will be for sale on the website 
- and through the usual channels (eBay,, Amazon etc.).  They have the same smal dimesions as similar sensor boards 
- on the market and will have custom addressing for i2C and wire interrupt lines.   Users of these sensors can purchase 
+ and through the usual channels (eBay,, Amazon etc.).  They have the same small dimesions as similar sensor boards 
+ on the market and will have custom addressing for I2C and wire interrupt lines.   Users of these sensors can purchase 
  them from us preflashed with [Yocta](https://www.yoctoproject.org/) Linux, or they can work with the code here on 
  [github](https://github.com/wawrow/myoctopus/tree/master/edison-cordova-bt/plugins/com.megster.cordova.bluetoothserial/examples), 
  or use them in any I2C BUS system. 
