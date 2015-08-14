@@ -1,4 +1,4 @@
-# Bluetooth Serial Plugin for PhoneGap
+# Bluetooth Serial [Plugin](https://github.com/don/BluetoothSerial) for PhoneGap
 
 This plugin enables serial communication over Bluetooth. It was written for communicating between Android or iOS and an Arduino.
 
