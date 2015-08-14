@@ -81,8 +81,19 @@ support will be able to run it.
 
   
 ---   
+###**Licenses**    
+  
+<img src="http://4.bp.blogspot.com/-7fqLH4KRemk/VaDQPEalsoI/AAAAAAAAAIw/6yRAhHkeEkw/s1600/myOctupus002-08logoonly.png">
+  
+---    
   
   
-####**[TEAM OCTOPUS](https://github.com/wawrow/myoctopus/wiki/Team-Octopus)**  
+######MyOctopus is completely open source, free to swim anywhere in the data ocean.  
+#####Please feel free to breed your own Octopii, or evolve MyOctopus into whatever creature you wish
+######But, remember, MyOctopus is licensed under [Creative Commons Attribution-ShareAlike 4.0 International Public License (CC BY-SA 4.0)](http://creativecommons.org/licenses/by-sa/4.0/legalcode) and these [terms](https://github.com/wawrow/myoctopus/blob/master/hostsoft/LICENSE).  
   
----
+---  
+  
+###**[TEAM OCTOPUS](https://github.com/wawrow/myoctopus/wiki/Team-Octopus)**  
+  
+---  
