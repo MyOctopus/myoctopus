@@ -1,0 +1,20 @@
+.top{
+    background-color: #2299dd;
+    color: white;
+    font-size: 36px;
+    width: 100%;
+    height: 60px;
+    overflow: hidden;
+}
+.middle{
+    background-color: #ffffff;
+    overflow: auto;
+}
+.noTextSelect{
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}

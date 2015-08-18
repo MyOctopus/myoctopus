@@ -1,0 +1,12 @@
+<div ng-controller="configurationController">
+    <div class="c_leftPanel">
+        <div class="c_menu_item" ng-click="commands.openWifi()">Wifi</div>
+        <div class="c_menu_item" ng-click="commands.openBluetooth()">Bluetooth</div>
+        <div class="c_menu_item" ng-click="commands.openConsole()">Console</div>
+    </div>
+    <div class="c_content">
+        <div ng-if="activeMenu=='wifi'" data-wifi>wifi</div>
+        <div ng-if="activeMenu=='bluetooth'" data-bluetooth>bluetooth</div>
+        <div ng-if="activeMenu=='console'" data-console>console</div>
+    </div>
+</div>

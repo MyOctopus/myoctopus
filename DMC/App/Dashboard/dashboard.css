@@ -1,0 +1,17 @@
+.widget{
+    width: 200px;
+    height: 200px;
+    display: inline-block;
+}
+.gWidget_container{
+    width: 280px;
+    height: 230px;
+    display: inline-block;
+    margin: 10px;
+}
+.dashboard_row{
+    text-align: center;
+}
+#dashboard{
+    padding: 10px;
+}

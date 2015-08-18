@@ -1,0 +1,11 @@
+<div>
+    <button ng-click="commands.enableWifi()">Enable wifi</button>
+    <button ng-click="commands.disableWifi()">Disable wifi</button>
+    <p>Is enabled: {{isWifiEnabled}}</p>
+    <p>Is connected: {{isWifiConnected}}</p>
+    <p>Connected to network: {{connectedNetwork}}</p>
+    <button ng-click="commands.refreshAvailableNetworks()">Refresh networks</button>
+    <ul>
+        <li ng-repeat="n in availableNetworks">{{n}} <button ng-click="commands.connectToNetwork(n)">Connect</button></li>
+    </ul>
+</div>

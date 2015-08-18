@@ -1,0 +1,34 @@
+<div ng-controller="sensorsController">
+    <div class="s_panels">
+        <div class="s_panel s_panel_left">
+            <div class="s_menu">
+                <div class="s_menu_item" ng-click="commands.showSensor_temperature()" ng-class="{s_menu_selected: activeSensor.id == 1}">Temperature</div>
+                <div class="s_menu_item" ng-click="commands.showSensor_humidity()" ng-class="{s_menu_selected: activeSensor.id == 2}">Humidity</div>
+                <div class="s_menu_item" ng-click="commands.showSensor_light()" ng-class="{s_menu_selected: activeSensor.id == 3}">Light</div>
+                <div class="s_menu_item" ng-click="commands.showSensor_pressure()" ng-class="{s_menu_selected: activeSensor.id == 4}">Pressure</div>
+            </div>
+        </div>
+        <div class="s_panel s_panel_middle">
+             <div id="s_middle" class="s_middle">
+                <div class="s_header">
+                    <p>{{activeSensor.name}}</p>
+                    <button ng-click="commands.sensors_showChart()">Chart</button>
+                    <button ng-click="commands.sensors_showTable()">Table</button>
+                    <button ng-click="commands.sensors_refreshData()">Refresh</button>
+                </div>
+                <div class="s_chartOrTablePanel">
+                    <div ng-if="isChart==true" data-schart></div>
+                    <div ng-if="isChart==false" data-stable></div>
+                </div>
+             </div>
+        </div>
+        <div class="s_panel s_panel_right">
+            <div>From</div>
+            <input type="date" ng-model="filter_from"/>
+            <input type="time" ng-model="filter_from"/>
+            <div>To</div>
+            <input type="date" ng-model="filter_to"/>
+            <input type="time" ng-model="filter_to"/>
+        </div>
+    </div>
+</div>

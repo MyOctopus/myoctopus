@@ -1,0 +1,16 @@
+.c_leftPanel{
+    background-color: indigo;
+    width: 200px;
+    float: left;
+    height: 600px;
+}
+.c_content{
+    background-color: yellow;
+    margin-left: 200px;
+}
+.c_menu_item{
+    color: white;
+    font-size: 24px;
+    border: 1px solid white;
+    height: 80px;
+}

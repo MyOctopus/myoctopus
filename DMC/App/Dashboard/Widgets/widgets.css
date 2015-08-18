@@ -1,0 +1,48 @@
+.gWidget{
+    width: 280px;
+    height: 230px;
+    display: table;
+    background-color: #6b9aff;
+    border: none;
+    -webkit-box-shadow: 2px 2px 12px 0px rgba(50, 50, 50, 0.41);
+    -moz-box-shadow:    2px 2px 12px 0px rgba(50, 50, 50, 0.41);
+    box-shadow:         2px 2px 12px 0px rgba(50, 50, 50, 0.41);
+
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    border-radius: 5px;
+}
+.gWidget_h{
+    display: table-row;
+    text-align: center;
+    vertical-align: middle;
+    color: white;
+    font-size: 20px;
+    height: 50px;
+}
+.gWidget_c{
+    display: table-row;
+    width:280px;
+    height:130px;
+}
+.gWidget_b{
+    display: table-row;
+    text-align: center;
+    vertical-align: middle;
+    color: white;
+    height: 50px;
+    font-size: 18px;
+}
+.gWidget_centeredCell{
+    display: table-cell;
+    text-align: center;
+    vertical-align: middle;
+}
+
+.wsens_head{
+    background-color: #2299dd;
+    color: white;
+    font-size: 18px;
+    height: 30px;
+    width: 100px;
+}

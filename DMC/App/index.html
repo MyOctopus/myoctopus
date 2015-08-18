@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="myOctopusDMC">
+<head>
+    <meta charset="UTF-8">
+    <title>MyOctopus DMC</title>
+    <link href="../node_modules/datatables/media/css/jquery.dataTables.css" rel="stylesheet"/>
+    <link href="../node_modules/nprogress/nprogress.css" rel="stylesheet"/>
+    <link href="styles.css" rel="stylesheet"/>
+    <link href="dashboard/dashboard.css" rel="stylesheet"/>
+    <link href="dashboard/widgets/widgets.css" rel="stylesheet"/>
+    <link href="sensors/sensors.css" rel="stylesheet"/>
+    <link href="configuration/configuration.css" rel="stylesheet"/>
+</head>
+<body ng-controller="shellController" class="noTextSelect">
+<div class="top">
+    MyOctopus + menu
+    <button ng-click="commands.showDashboard()">Dashboard</button>
+    <button ng-click="commands.showSensors()">Sensors</button>
+    <button ng-click="commands.showConfiguration()">Configuration</button>
+</div>
+<div id="content" class="middle" ui-view></div>
+</body>
+<script src="../node_modules/jquery/dist/jquery.js"></script>
+<script src="../node_modules/angular/angular.js"></script>
+<script src="../node_modules/angular-ui-router/release/angular-ui-router.js"></script>
+<script src="../node_modules/datatables/media/js/jquery.dataTables.js"></script>
+<script src="../node_modules/highcharts/scripts/highcharts.js"></script>
+<script src="../node_modules/nprogress/nprogress.js"></script>
+<script src="../node_modules/raphael/raphael-min.js"></script>
+<script src="app.js"></script>
+<script src="device/deviceServices.js"></script>
+<script src="dashboard/dashboard.js"></script>
+<script src="dashboard/widgets/widgets.js"></script>
+<script src="sensors/sensors.js"></script>
+<script src="configuration/configuration.js"></script>
+<script src="configuration/bluetooth/bluetooth.js"></script>
+<script src="configuration/console/console.js"></script>
+<script src="configuration/wifi/wifi.js"></script>
+</html>
