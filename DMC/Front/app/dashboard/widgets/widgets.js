@@ -54,7 +54,7 @@ angular.module("myOctopusDMC")
     .directive('cpuWidget',function($q, octopusDeviceService) {
         return {
             scope: true,
-            templateUrl: "dashboard/widgets/w_gauge.html",
+            templateUrl: "app/dashboard/widgets/w_gauge.html",
             link: function (scope, element, attr) {
                 scope.title = "CPU";
                 scope.details = "Intel Edison Cores";
@@ -80,7 +80,7 @@ angular.module("myOctopusDMC")
     .directive('memoryWidget',function($q, octopusDeviceService) {
         return {
             scope: true,
-            templateUrl: "dashboard/widgets/w_gauge.html",
+            templateUrl: "app/dashboard/widgets/w_gauge.html",
             link: function (scope, element, attr) {
                 scope.stats = null;
                 scope.title = "MEMORY";
@@ -108,7 +108,7 @@ angular.module("myOctopusDMC")
     .directive('storageWidget',function($q, octopusDeviceService) {
         return {
             scope: true,
-            templateUrl: "dashboard/widgets/w_gauge.html",
+            templateUrl: "app/dashboard/widgets/w_gauge.html",
             link: function (scope, element, attr) {
                 scope.stats = null;
                 scope.title = "STORAGE";
@@ -183,7 +183,7 @@ angular.module("myOctopusDMC")
     .directive('sensorsWidget',function($q, octopusDeviceService) {
         return {
             scope: true,
-            templateUrl: "dashboard/widgets/w_sensors.html",
+            templateUrl: "app/dashboard/widgets/w_sensors.html",
             link: function (scope, element, attr) {
                 scope.stats = null;
                 scope.widget = Widgets.create(scope);

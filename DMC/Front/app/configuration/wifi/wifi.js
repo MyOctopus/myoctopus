@@ -2,7 +2,7 @@ angular.module("myOctopusDMC")
     .directive('wifi',function() {
         return {
             replace: 'true',
-            templateUrl: "configuration/wifi/wifi.html",
+            templateUrl: "app/configuration/wifi/wifi.html",
             controller: function($scope){
                 $scope.isWifiEnabled = false;
                 $scope.isWifiConnected = false;

@@ -3,13 +3,17 @@
 <head>
     <meta charset="UTF-8">
     <title>MyOctopus DMC</title>
+    <!-- inject:css -->
+    <!-- build:css libscss.css -->
     <link href="bower_components/datatables/media/css/jquery.dataTables.min.css" rel="stylesheet"/>
     <link href="bower_components/nprogress/nprogress.css" rel="stylesheet"/>
     <link href="styles.css" rel="stylesheet"/>
-    <link href="dashboard/dashboard.css" rel="stylesheet"/>
-    <link href="dashboard/widgets/widgets.css" rel="stylesheet"/>
-    <link href="sensors/sensors.css" rel="stylesheet"/>
-    <link href="configuration/configuration.css" rel="stylesheet"/>
+    <link href="app/dashboard/dashboard.css" rel="stylesheet"/>
+    <link href="app/dashboard/widgets/widgets.css" rel="stylesheet"/>
+    <link href="app/sensors/sensors.css" rel="stylesheet"/>
+    <link href="app/configuration/configuration.css" rel="stylesheet"/>
+    <!-- endbuild -->
+    <!-- endinject -->
 </head>
 <body ng-controller="shellController" class="noTextSelect">
 <div class="top">
@@ -20,6 +24,8 @@
 </div>
 <div id="content" class="middle" ui-view></div>
 </body>
+<!-- inject:js -->
+<!-- build:js libs.js -->
 <script src="bower_components/jquery/dist/jquery.min.js"></script>
 <script src="bower_components/angular/angular.min.js"></script>
 <script src="bower_components/angular-ui-router/release/angular-ui-router.min.js"></script>
@@ -27,13 +33,15 @@
 <script src="bower_components/highcharts/highcharts.js"></script>
 <script src="bower_components/nprogress/nprogress.js"></script>
 <script src="bower_components/raphael/raphael-min.js"></script>
-<script src="app.js"></script>
-<script src="device/deviceServices.js"></script>
-<script src="dashboard/dashboard.js"></script>
-<script src="dashboard/widgets/widgets.js"></script>
-<script src="sensors/sensors.js"></script>
-<script src="configuration/configuration.js"></script>
-<script src="configuration/bluetooth/bluetooth.js"></script>
-<script src="configuration/console/console.js"></script>
-<script src="configuration/wifi/wifi.js"></script>
+<script src="app/app.js"></script>
+<script src="app/device/deviceServices.js"></script>
+<script src="app/dashboard/dashboard.js"></script>
+<script src="app/dashboard/widgets/widgets.js"></script>
+<script src="app/sensors/sensors.js"></script>
+<script src="app/configuration/configuration.js"></script>
+<script src="app/configuration/bluetooth/bluetooth.js"></script>
+<script src="app/configuration/console/console.js"></script>
+<script src="app/configuration/wifi/wifi.js"></script>
+<!-- endbuild -->
+<!-- endinject -->
 </html>

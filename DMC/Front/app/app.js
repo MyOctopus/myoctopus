@@ -2,15 +2,15 @@ angular.module("myOctopusDMC", ['ui.router'])
     .config(function($stateProvider, $urlRouterProvider,$httpProvider, $injector) {
         $stateProvider
             .state('dashboard', {
-            templateUrl: "dashboard/dashboard.html",
+            templateUrl: "app/dashboard/dashboard.html",
             authorize: false
         })
             .state('sensors', {
-            templateUrl: "sensors/sensors.html",
+            templateUrl: "app/sensors/sensors.html",
             authorize: false
         })
             .state('configuration', {
-            templateUrl: "configuration/configuration.html",
+            templateUrl: "app/configuration/configuration.html",
             authorize: false
         });
     })
