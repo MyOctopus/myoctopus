@@ -1,0 +1,29 @@
+{
+  "name": "myoctopus-dmc",
+  "main": "app.js",
+  "version": "0.0.1",
+  "authors": [
+    "piterp"
+  ],
+  "moduleType": [
+    "globals"
+  ],
+  "license": "MIT",
+  "description": "MyOctopus Desktop Management Console",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "angular-ui-router": "~0.2.15",
+    "angular": "~1.4.4",
+    "datatables": "~1.10.8",
+    "highcharts": "~4.1.7",
+    "jquery": "~2.1.4",
+    "nprogress": "~0.2.0",
+    "raphael": "~2.1.4"
+  }
+}
