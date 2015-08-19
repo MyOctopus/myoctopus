@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="myOctopusDMC">
+<head>
+    <meta charset="UTF-8">
+    <title>MyOctopus DMC</title>
+    <!-- inject:css -->
+    <link rel="stylesheet" href="components/myOctopus_1.0.0-f2e8188003.css">
+    <link rel="stylesheet" href="myOctopus_1.0.0-68c105fb4a.css">
+    <!-- endinject -->
+</head>
+<body ng-controller="shellController" class="noTextSelect">
+<div class="top">
+    MyOctopus + menu
+    <button ng-click="commands.showDashboard()">Dashboard</button>
+    <button ng-click="commands.showSensors()">Sensors</button>
+    <button ng-click="commands.showConfiguration()">Configuration</button>
+</div>
+<div id="content" class="middle" ui-view></div>
+</body>
+<!-- inject:js -->
+<script src="components/myOctopusComponents_1.0.0-514155bf80.js"></script>
+<script src="myOctopus_1.0.0-5513f0be61.js"></script>
+<!-- endinject -->
+</html>
