@@ -31,14 +31,14 @@ Follow <a href="https://twitter.com/MyOctopus_io" class="twitter-follow-button" 
 ##**The Smart Home that is actually Smart.**  
   
     
->###### *MyOctopus*   is less a smart home hub, more a smart home muti-tool limited only by the imagination of it's users.  
+>###### *MyOctopus*: less a smart home hub, more a smart home muti-tool limited only by the imagination of it's users.  
  
 
 
 **MyOctopus** is an open source smart home system running on open source hardware.  It is not just a smart home hub, 
-we are designing it to be a **smart** smart home system with multiple devices - it will learn from your daily patterns 
-(using AI Algorithms), utilize parallel distributed computing, connecting **MyOctopus** devices together and connecting 
-all your other smart devices into a grid, and it will be both an app-hosting and a development platform.   
+we are designing it to be a **smart** smart home system - it will learn from your daily patterns 
+(using AI Algorithms), utilize parallel distributed computing, connecting **MyOctopus** devices together, and it will be both an app-hosting and a development platform.  
+  
   
   
   
