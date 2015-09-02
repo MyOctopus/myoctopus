@@ -18,6 +18,7 @@ ___
 ######All contributions welcome, please join us in **[SLACK](https://myoctopus.slack.com)** for discussions or questions.  
 >We are especially looking for input into the areas of **mobile app dev**, **electronics**, **pcb boards**, **digital to analog conversion**, 
 and **AI algorithms**.  So, if this is relevant to your interests, please email sylwi@myoctopus.io.  
+>>We are also on **[hackster](https://www.hackster.io/myoctopus1)** - you can follow us and contribute here too.
 
   
  
