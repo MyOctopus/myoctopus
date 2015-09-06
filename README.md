@@ -24,7 +24,7 @@ ___
  
 Please visit us on **[myoctopus.io](http://www.myoctopus.io)**  
 Keep up to date with news on our **[BLOG](http://blog.myoctopus.io/)**   
-Follow <a href="https://twitter.com/MyOctopus_io" class="twitter-follow-button" data-show-count="false" data-dnt="true">@MyOctopus_io</a>  
+Follow on Twitter <a href="https://twitter.com/MyOctopus_io" class="twitter-follow-button" data-show-count="false" data-dnt="true">@MyOctopus_io</a>  
 
   
   ---
