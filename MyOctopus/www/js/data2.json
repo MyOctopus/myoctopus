@@ -1,0 +1,234 @@
+[
+	{
+		"timestamp": "2015-06-01 15:36:25:234",
+		"sensors": [
+			{
+				"id": "1",
+				"name": "sensor A",
+				"unit": "C",
+				"min": "-10",
+				"max": "120"
+			},
+			{
+				"id": "2",
+				"name": "CO2 sensor",
+				"unit": "ppm",
+				"min": "3000",
+				"max": "10000"
+			}
+		],
+		"data": [
+			{
+				"sensor_id": "1",
+				"value": "26.5"
+			},
+			{
+				"sensor_id": "2",
+				"value": "4280"
+			}
+		]
+	},
+	{
+		"timestamp": "2015-06-01 16:36:25:234",
+		"sensors": [
+			{
+				"id": "1",
+				"name": "sensor A",
+				"unit": "C",
+				"min": "-10",
+				"max": "120"
+			},
+			{
+				"id": "2",
+				"name": "CO2 sensor",
+				"unit": "ppm",
+				"min": "3000",
+				"max": "10000"
+			}
+		],
+		"data": [
+			{
+				"sensor_id": "1",
+				"value": "66.5"
+			},
+			{
+				"sensor_id": "2",
+				"value": "8220"
+			}
+		]
+	},
+	{
+		"timestamp": "2015-06-01 17:36:25:234",
+		"sensors": [
+			{
+				"id": "1",
+				"name": "sensor A",
+				"unit": "C",
+				"min": "-10",
+				"max": "120"
+			},
+			{
+				"id": "2",
+				"name": "CO2 sensor",
+				"unit": "ppm",
+				"min": "3000",
+				"max": "10000"
+			}
+		],
+		"data": [
+			{
+				"sensor_id": "1",
+				"value": "-8"
+			},
+			{
+				"sensor_id": "2",
+				"value": "7500"
+			}
+		]
+	},
+	{
+		"timestamp": "2015-06-01 18:36:25:234",
+		"sensors": [
+			{
+				"id": "1",
+				"name": "sensor A",
+				"unit": "C",
+				"min": "-10",
+				"max": "120"
+			},
+			{
+				"id": "2",
+				"name": "CO2 sensor",
+				"unit": "ppm",
+				"min": "3000",
+				"max": "10000"
+			}
+		],
+		"data": [
+			{
+				"sensor_id": "1",
+				"value": "26.5"
+			},
+			{
+				"sensor_id": "2",
+				"value": "6280"
+			}
+		]
+	},
+	{
+		"timestamp": "2015-06-01 21:36:25:234",
+		"sensors": [
+			{
+				"id": "1",
+				"name": "sensor A",
+				"unit": "C",
+				"min": "-10",
+				"max": "120"
+			},
+			{
+				"id": "2",
+				"name": "CO2 sensor",
+				"unit": "ppm",
+				"min": "3000",
+				"max": "10000"
+			}
+		],
+		"data": [
+			{
+				"sensor_id": "1",
+				"value": "112.5"
+			},
+			{
+				"sensor_id": "2",
+				"value": "3212"
+			}
+		]
+	},
+	{
+		"timestamp": "2015-06-01 22:36:25:234",
+		"sensors": [
+			{
+				"id": "1",
+				"name": "sensor A",
+				"unit": "C",
+				"min": "-10",
+				"max": "120"
+			},
+			{
+				"id": "2",
+				"name": "CO2 sensor",
+				"unit": "ppm",
+				"min": "3000",
+				"max": "10000"
+			}
+		],
+		"data": [
+			{
+				"sensor_id": "1",
+				"value": "56.5"
+			},
+			{
+				"sensor_id": "2",
+				"value": "4250"
+			}
+		]
+	},
+	{
+		"timestamp": "2015-06-02 05:36:25:234",
+		"sensors": [
+			{
+				"id": "1",
+				"name": "sensor A",
+				"unit": "C",
+				"min": "-10",
+				"max": "120"
+			},
+			{
+				"id": "2",
+				"name": "CO2 sensor",
+				"unit": "ppm",
+				"min": "3000",
+				"max": "10000"
+			}
+		],
+		"data": [
+			{
+				"sensor_id": "1",
+				"value": "0"
+			},
+			{
+				"sensor_id": "2",
+				"value": "9208"
+			}
+		]
+	},
+	{
+		"timestamp": "2015-06-02 10:36:25:234",
+		"sensors": [
+			{
+				"id": "1",
+				"name": "sensor A",
+				"unit": "C",
+				"min": "-10",
+				"max": "120"
+			},
+			{
+				"id": "2",
+				"name": "CO2 sensor",
+				"unit": "ppm",
+				"min": "3000",
+				"max": "10000"
+			}
+		],
+		"data": [
+			{
+				"sensor_id": "1",
+				"value": "26.5"
+			},
+			{
+				"sensor_id": "2",
+				"value": "7280"
+			}
+		]
+	}
+]

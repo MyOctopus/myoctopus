@@ -1,0 +1,11 @@
+
+<ion-view view-title="Simple Switch">
+  <ion-content has-bouncing="false" on-swipe-right="swipeChange(true)" on-swipe-left="swipeChange(false)" on-double-tap="switchLight()">
+	 <div class="brick-wall">
+	  <div class="item item-image" id="switch-simple-bulb-container" ng-style="lightStyle()">
+	    <img id="switch-simple-bulb-image" src="img/bulb_PNG1243.png"/>
+	  </div>
+	</div>
+  	<ion-toggle class="dark-item" ng-model="light.turned" on-tap="switchChange()" toggle-class="toggle-energized">Turn On/Off</ion-toggle>
+ </ion-content>
+</ion-view>

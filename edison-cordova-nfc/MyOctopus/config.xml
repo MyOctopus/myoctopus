@@ -1,7 +1,8 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<widget xmlns:cdv="http://cordova.apache.org/ns/1.0" xmlns:vs="http://schemas.microsoft.com/appx/2014/htmlapps" id="my.octopus.nfc" version="1.0.0" xmlns="http://www.w3.org/ns/widgets" defaultlocale="en-US">
+<widget xmlns:cdv="http://cordova.apache.org/ns/1.0" xmlns:vs="http://schemas.microsoft.com/appx/2014/htmlapps" id="my.octopus.io" version="1.0.0" xmlns="http://www.w3.org/ns/widgets" defaultlocale="en-US">
   <name>MyOctopus</name>
-  <description>MyOctopus project to create fancy user interfaces for hybrid mobile applications. It uses uses Apache Cordova to help you build an app that targets multiple mobile platforms: Android, iOS, Windows, and Windows Phone.</description>
+  <description>
+  </description>
   <author href="http://onsen.io" email="dev@onsen.io">MyOctopus</author>
   <content src="index.html" />
   <access origin="*" />
@@ -97,4 +98,6 @@
   <vs:plugin name="hu.dpal.phonegap.plugins.SpinnerDialog" version="1.3.1" />
   <vs:plugin name="com.megster.cordova.ble" version="0.1.7" />
   <vs:plugin name="com.chariotsolutions.nfc.plugin" version="0.6.1" />
+  <vs:plugin name="org.apache.cordova.splashscreen" version="1.0.0" />
+  <preference name="Orientation" value="Default" />
 </widget>

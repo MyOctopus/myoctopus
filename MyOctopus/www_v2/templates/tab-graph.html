@@ -1,0 +1,42 @@
+<ion-view view-title="Graph">
+  <ion-content has-bouncing="false">
+    <div class="list card">
+      <div class="item item-divider">Sensors Chart</div>
+      <div class="item item-body">
+        <div>
+  			<linechart data="graph.data" options="graph.options" mode="" width="" height="400"></linechart>
+        </div>
+      </div>
+        <div class="row">
+	        <div class="col">
+				<button class="button button-block button-outline button-energized" on-tap="resetGraph()">
+				  Reset
+				</button>
+	        </div>
+	        <div class="col">
+				<button class="button button-block button-energized" on-tap="showHideGraph(true)">
+				  Show All
+				</button>
+	        </div>
+	        <div class="col">
+				<button class="button button-block button-outline button-energized" on-tap="showHideGraph(false)">
+				  Hide All
+				</button>
+	        </div>
+      </div>
+        <div class="row">
+	        <div class="col">
+				<button class="button button-block button-energized" on-tap="switchArea('area')">
+				  Area On
+				</button>
+	        </div>
+	        <div class="col">
+				<button class="button button-block button-outline button-energized" on-tap="switchArea('linear')">
+				  Area Off
+				</button>
+	        </div>
+        </div>
+      </div>
+<!--     </div> -->
+  </ion-content>
+</ion-view>

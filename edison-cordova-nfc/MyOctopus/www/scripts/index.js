@@ -6,15 +6,31 @@
     "use strict";
 
     var MyOctopus = function () {
-        var self = this;
+        var self = this,
+            storagePrefix = 'app.myoctopus.io';
+
+        self.profileExists = false;
+
+        self.getStorageItem = function(itemName, remove) {
+            remove = remove || false;
+            var fullItemName = storagePrefix + ':' + itemName;
+            var value = window.localStorage.getItem(fullItemName);
+            if (null != value && remove) window.localStorage.removeItem(fullItemName);
+            return value;
+        }
+
+        self.setStorageItem = function (itemName, value) {
+            var fullItemName = storagePrefix + ':' + itemName;
+            window.localStorage.setItem(fullItemName, value);
+        }
 
         self.onDeviceReady = function() {
             // Handle the Cordova pause and resume events
             document.addEventListener('pause', window.myoctopus.onPause.bind(self), false);
             document.addEventListener('resume', window.myoctopus.onResume.bind(self), false);
 
-            // TODO: Cordova has been loaded. Perform any initialization that requires Cordova here.
-            self.nfcChanged();
+            // Check if profile exists
+            self.profileExists = null != self.getStorageItem('profile');
         };
 
         self.onPause = function() {
@@ -118,6 +134,11 @@
                     self.nfcWriteMode = false;
                 }
            );
+        }
+
+        self.scanWifi = function () {
+            var current = window.wifi.lan;            //Connected WiFi info
+            var available = window.wifi.networks;
         }
     };
 
