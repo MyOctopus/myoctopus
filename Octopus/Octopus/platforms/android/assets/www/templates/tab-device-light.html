@@ -1,0 +1,12 @@
+﻿<ion-view title="Light Control" view-title="Light Control">
+  <ion-content padding="true" class="has-header has-footer">
+
+    <div><label color="red">Device {{devId}}</label></div>
+    <canvas id="canvLightDial" style="position: absolute; left:20pt; top:20pt;" width="300" height="300"></canvas>
+    <ion-list>
+      <ion-item class="item-remove-animate item-avatar item-icon-right" ng-repeat="evt in events" type="item-text-wrap">
+        <div>{{evt.name}}</div>
+      </ion-item>
+      </ion-list> 
+  </ion-content>
+</ion-view>

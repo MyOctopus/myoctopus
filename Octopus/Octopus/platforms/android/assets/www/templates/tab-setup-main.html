@@ -1,0 +1,18 @@
+<ion-view title="Device Scan" view-title="Device Scan">
+  <ion-content padding="true" class="has-header has-footer">
+    <div class="button-bar"></div>
+    <form>
+      <ion-toggle toggle-class="toggle-positive" ng-model="bluetooth.enabled" ng-change="onBleEnabledToggle()" ng-disabled="bluetooth.enabled">Bluetooth Enabled</ion-toggle>
+    </form>
+    <button class="button button-stable button-block button-large" ng-click="startScan()" ng-disabled="!bluetooth.enabled"><i class="icon ion-loading-b"></i>Scan</button>
+    <div><label color="red">{{error.text}}</label></div>
+    <ion-list>
+      <ion-item class="item-remove-animate item-avatar item-icon-right" ng-repeat="dev in devs" type="item-text-wrap" href="#/tab/setupdev/{{dev.id}}">
+        <img ng-src="{{dev.face}}">
+        <h2>{{dev.name}}</h2>
+        <p>{{dev.lastText}}</p>
+        <i class="icon ion-chevron-right icon-accessory"></i>
+      </ion-item>
+    </ion-list>
+  </ion-content>
+</ion-view>

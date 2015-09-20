@@ -1,0 +1,16 @@
+{
+    "com.megster.cordova.ble": {
+        "source": {
+            "type": "git",
+            "url": "https://github.com/don/cordova-plugin-ble-central.git",
+            "subdir": "."
+        }
+    },
+    "ru.mcler.phonegap.plugins.SpinnerDialog": {
+        "source": {
+            "type": "git",
+            "url": "https://github.com/mcler/SpinnerDialog.git",
+            "subdir": "."
+        }
+    }
+}

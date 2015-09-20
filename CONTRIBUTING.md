@@ -20,7 +20,7 @@ To contribute to software or apps, please [fork](https://guides.github.com/activ
 
 If the hardware side of things is relevant to your interests, or you would like to contribute to hardware development please email joinus@myoctopus.io.  
 
->We are also on **[hackster](https://www.hackster.io/myoctopus1)** - you can follow us and contribute here too.
+>We are also on **[hackster.io](https://www.hackster.io/myoctopus1)** - you can follow us and contribute here too.
   
 ---  
 #####PLEASE KEEP IN MIND:

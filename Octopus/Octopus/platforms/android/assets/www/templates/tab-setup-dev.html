@@ -1,0 +1,40 @@
+<ion-view view-title="{{chat.name}} Setup">
+  <ion-content padding="true" class="has-header has-footer">
+    <div class="list card">
+      <div class="item item-divider">Device Setup</div>
+      <div class="item item-body">
+        <form>
+          <label class="item item-input" name="octopusName">
+            <span class="input-label">Name</span>
+            <input type="text" placeholder="Octopus Name" value="{{setupData.deviceName}}" ng-model="setupData.deviceName">
+          </label>
+          <div class="spacer" style="width: 266px; height: 7px;"></div>
+          <label class="item item-input" name="devicePwd">
+            <span class="input-label">Password</span>
+            <input type="password" placeholder="" value="{{setupData.devicePwd}}" ng-model="setupData.devicePwd">
+          </label>
+        </form>
+      </div>
+    </div>
+    <div class="list card">
+      <div class="item item-divider">WiFi Setup</div>
+      <div class="item item-body">
+        <form>
+          <label class="item item-input" name="wifiSSID">
+            <span class="input-label">SSID</span>
+            <input type="text" placeholder="WiFi Network Name" value="{{setupData.wifiSsid}}" ng-model="setupData.wifiSsid">
+          </label>
+          <div class="spacer" style="width: 266px; height: 8px;"></div>
+          <label class="item item-input" name="wifiPwd">
+            <span class="input-label">Password</span>
+            <input type="password" placeholder="" value="{{setupData.wifiPwd}}" ng-model="setupData.wifiPwd">
+          </label>
+        </form>
+      </div>
+    </div>
+    <div class="button-bar">
+      <button class="button button-stable button-block  icon ion-checkmark-round" ng-click="initSetup()" ng-disabled="!dataValid()"></button>
+      <button class="button button-stable button-block  icon ion-close-round" ng-click="changeView('/tab/setup')"></button>
+    </div>
+  </ion-content>
+</ion-view>

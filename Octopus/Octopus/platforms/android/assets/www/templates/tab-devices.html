@@ -1,0 +1,26 @@
+<ion-view view-title="Running Devices">
+  <ion-content class="padding">
+    <ion-refresher pulling-text="Pull down to refresh manually, automatic refresh in {{ autorereshSec }} seconds..."
+                   on-refresh="manualRefresh()">
+    </ion-refresher>
+
+    <ion-list>
+      <ion-item class="item-remove-animate item-avatar item-icon-right" ng-repeat="dev in devices" type="item-text-wrap" href="#/tab/device/{{dev.id}}">
+        <div class="item item-divider">{{dev.name}}</div>
+        <div class="item item-body item-icon-right">
+          <h2>IP address: {{dev.ip}}</h2>
+          <span>Status:&nbsp;&nbsp;&nbsp;</span><span style="color:{{dev.statusColor}}">{{dev.status}}</span>
+          <i class="icon ion-chevron-right icon-accessory"></i>
+        </div>
+      </ion-item>
+    </ion-list>
+        <div class="list card" ng-repeat="dev in devices" ng-click="showDevice(dev)">
+          <div class="item item-divider">{{dev.name}}</div>
+          <div class="item item-body item-icon-right">
+            <h2>IP address: {{dev.ip}}</h2>
+            <span>Status:&nbsp;&nbsp;&nbsp;</span><span style="color:{{dev.statusColor}}">{{dev.status}}</span>
+            <i class="icon ion-chevron-right icon-accessory"></i>
+          </div>
+        </div>
+  </ion-content>
+</ion-view>
