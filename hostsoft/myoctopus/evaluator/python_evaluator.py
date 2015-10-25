@@ -4,7 +4,7 @@
 #TODO: would be happening though api anyway - this should not be a problem.
 
 
-import myoctopus.datastore.store_sqlite as store
+import myoctopus.datastore.store_redis as store
 from time import sleep
 import imp
 import threading
@@ -15,13 +15,14 @@ def runner(key, code):
     module = imp.new_module("eval_module")
     exec code in module.__dict__
     result = module.main()
-    store.put(key, result, hashed=True)
+    store.put(key, result)
 
 
 def run():
     while True:
         es = store.get_evals()
         if es:
+            print 'got thread', len(es)
             key, code = es
             evalThread = threading.Thread(target=runner, args=(key, code,))
             evalThread.daemon = True

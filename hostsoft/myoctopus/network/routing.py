@@ -1,4 +1,4 @@
-import myoctopus.datastore.store_sqlite as store
+import myoctopus.datastore.store_redis as store
 
 class LocalNode(object):
 
@@ -10,5 +10,3 @@ class LocalNode(object):
 
 def get_node_for_key(key):
     return LocalNode()
-
-

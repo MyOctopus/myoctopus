@@ -1,0 +1,63 @@
+<div class="page page-dashboard" data-ng-controller="DashboardCtrl">
+
+    <!-- stats -->
+    <div class="row">
+        <div class="col-lg-3 col-xsm-6">
+            <div class="panel mini-box">
+                <span class="box-icon bg-success">
+                    <i class="fa fa-sun-o"></i>
+                </span>
+                <div class="box-info">
+                    <p class="size-h2"><span ng-bind="temperature.data"></span><span class="size-h4">C</span></p>
+                    <p class="text-muted"><span data-translate="TEMPERATURE"></span></p>
+                </div>
+            </div>
+        </div>
+        <div class="col-lg-3 col-xsm-6">
+            <div class="panel mini-box">
+                <span class="box-icon bg-info">
+                    <i class="fa fa-cloud"></i>
+                </span>
+                <div class="box-info">
+                    <p class="size-h2"><span ng-bind="humidity.data"></span><span class="size-h4">%</span></p>
+                    <p class="text-muted"><span data-translate="HUMIDITY"></span></p>
+                </div>
+            </div>
+        </div>
+        <div class="col-lg-3 col-xsm-6">
+            <div class="panel mini-box">
+                <span class="box-icon bg-warning">
+                    <i class="fa fa-lightbulb-o"></i>
+                </span>
+                <div class="box-info">
+                    <p class="size-h2"><span ng-bind="lux.data"><span class="size-h4">lx</span></span></p>
+                    <p class="text-muted"><span data-translate="LUX"></span></p>
+                </div>
+            </div>
+        </div>
+        <div class="col-lg-3 col-xsm-6">
+            <div class="panel mini-box">
+                <span class="box-icon bg-danger">
+                    <i class="fa fa-sun-o red"></i>
+                </span>
+                <div class="box-info">
+                    <p class="size-h2"><span ng-bind="irtemperature.data"></span><span class="size-h4">C</span></p>
+                    <p class="text-muted"><span data-translate="IR TEMPERATURE"></span></p>
+                </div>
+            </div>
+        </div>
+        <div class="col-lg-3 col-xsm-6">
+            <div class="panel mini-box">
+                <span class="box-icon bg-info">
+                    <i class="fa fa-cloud-download"></i>
+                </span>
+                <div class="box-info">
+                    <p class="size-h2"><span ng-bind="pressure.data"></span><span class="size-h4">Hpa</span></p>
+                    <p class="text-muted"><span data-translate="PRESSURE"></span></p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- end stats -->
+
+</div>

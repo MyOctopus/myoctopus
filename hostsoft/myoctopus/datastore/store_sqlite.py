@@ -1,10 +1,17 @@
 import sqlite3 as lite
 import hashlib
+from flask.ext.socketio import SocketIO, emit
 
+connection = None
+socketio = None
+q = None
 
 def get_connection():
-    conn = lite.connect("datastore.db")
-    return conn
+    global connection
+    if connection: return connection
+    print "New Connection"
+    connection = lite.connect("datastore.db")
+    return connection
 
 
 def init_table():
@@ -30,6 +37,10 @@ def put(key, value, hashed=False):
     hashed_key = hashed and key or hash(key)
     cur.execute("insert into datastore (key, data) values (?, ?)", (hashed_key, value))
     conn.commit()
+    if socketio:
+        # print key, value
+        socketio.emit(key, {'data': value}, namespace='/test')
+
 
 
 def read(key, remove=False):
