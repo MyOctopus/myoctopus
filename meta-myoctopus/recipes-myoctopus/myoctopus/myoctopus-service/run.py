@@ -1,6 +1,6 @@
 import myoctopus.restapi.host_flask as host
 import myoctopus.evaluator.python_evaluator as evaluator
-import myoctopus.datastore.store_sqlite as store
+import myoctopus.datastore.store_redis as store
 import myoctopus.sensors
 import time
 import threading

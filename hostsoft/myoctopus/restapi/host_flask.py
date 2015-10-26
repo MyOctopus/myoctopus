@@ -31,7 +31,7 @@ def index():
 
 @app.route('/dashboard/<path:path>')
 def send_dash(path):
-    return send_from_directory('/home/root/dashboard-21', path)
+    return send_from_directory('../dashboard-21', path)
 
 thread = None
 
