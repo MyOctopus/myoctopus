@@ -9,8 +9,10 @@ setup(
     author_email='wawrzyniec@wawro.eu',
     description='Host software for MyOctopus project',
     packages=find_packages(),
+    include_package_data=True,
     platforms='any',
     install_requires=[
         'Flask>=0.0.1',
     ],
+    package_data={'dashboard-21': ['*']}   
 )

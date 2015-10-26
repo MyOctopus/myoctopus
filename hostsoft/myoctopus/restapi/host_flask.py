@@ -7,7 +7,9 @@ from flask import Flask, request, stream_with_context, Response
 from flask.ext.cors import CORS, cross_origin
 from flask.ext.socketio import SocketIO
 import json
-
+import myoctopus
+import os
+DASHBOARD_ROOT = os.path.dirname(myoctopus.__file__) + '/dashboard-21'
 import time
 from threading import Thread
 from flask import Flask, render_template, session, request, send_from_directory
@@ -31,7 +33,7 @@ def index():
 
 @app.route('/dashboard/<path:path>')
 def send_dash(path):
-    return send_from_directory('../dashboard-21', path)
+    return send_from_directory(DASHBOARD_ROOT, path)
 
 thread = None
 

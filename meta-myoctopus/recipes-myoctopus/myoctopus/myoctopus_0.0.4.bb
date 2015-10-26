@@ -10,4 +10,4 @@ S = "${WORKDIR}/myoctopus_${PV}"
 
 inherit setuptools
 
-RDEPENDS_${PN} = "python-modules python-flask python-flask-socketio python-redis python-gevent redis"
+RDEPENDS_${PN} = "python-modules python-flask python-flask-socketio python-redis python-gevent redis python-cors"

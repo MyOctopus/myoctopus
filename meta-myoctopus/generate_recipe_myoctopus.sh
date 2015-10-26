@@ -32,7 +32,7 @@ S = "\${WORKDIR}/myoctopus_\${PV}"
 
 inherit setuptools
 
-RDEPENDS_\${PN} = "python-modules python-flask"
+RDEPENDS_\${PN} = "python-modules python-flask python-flask-socketio python-redis python-gevent redis python-flask-cors"
 EOM
 
 echo "Done"
